@@ -1,2 +1,2 @@
-# e-learning-database-dummy
-test doang
+testing for databases
+>>>>>>> e37213b (first commit)
