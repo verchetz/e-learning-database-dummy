@@ -1,21 +1,21 @@
 //tunggu di render semua
-$(document).ready(function(){
-    //cek email sudah ada atau belum
-    $(".email").on("keypress blur", function () {
-        let email = $(".email").val();
+// $(document).ready(function(){
+//     //cek email sudah ada atau belum
+//     $(".email").on("keypress blur", function () {
+//         let email = $(".email").val();
 
-        $.ajax({
-            url:'queryData/addUser.php',
-            method: 'POST',
-            data: {
-                email: email,
-            },
-            success:function (data) {
-                console.log(data);
-            }
-        });
-    });
-});
+//         $.ajax({
+//             url:'queryData/addUser.php',
+//             method: 'POST',
+//             data: {
+//                 email: email,
+//             },
+//             success:function (data) {
+//                 console.log(data);
+//             }
+//         });
+//     });
+// });
 
 
 function add() {
