@@ -21,19 +21,23 @@
 
     <div class="input-group my-3 w-50">
         <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">Name</span>
-        <input type="text" class="form-control names" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control names" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        <span class="text-danger validName"></span>
     </div>
     <div class="input-group my-3 w-50">
         <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">Username</span>
-        <input type="text" class="form-control username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        <span class="text-danger validUsername"></span>
     </div>
     <div class="input-group my-3 w-50">
         <span class="input-group-text" id="inputGroup-sizing-default" style="width: 120px;">Email</span>
-        <input type="text" class="form-control email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="email" class="form-control email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        <span class="text-danger validEmail"></span>
     </div>
-    <div class="button">
-        <button type="button" class="btn btn-dark submitButt" onClick="add()">Submit</button>
-    </div>
+    <span class="button mt-3">
+      <input type="submit" class="btn btn-dark submitButt" onClick="add()"></input>
+    </span>
+    <span class="mb-3 fs-4 ms-4" id="successRegis"></span>
 
     </form>
 
