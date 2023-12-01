@@ -12,7 +12,6 @@ $(document).ready(function(){ //pendaftaran/register
                 email: email,
             },
             success:function (data) {
-                console.log(data);
                 if (data != 0) { //berarti ada gmail sesuai parameter di database
                     $(".validEmail").html("<span class='text-danger'>Email already used!</span>");
                     $(".submitButt").attr("disabled", true);
@@ -31,7 +30,7 @@ function userLogin(){
     let username = $("#username").val();
     let email = $("#email").val();
 
-    $.ajax({
+    $.ajax({ 
         url: 'queryData/checkUser.php',
         method: 'POST',
         data: {
@@ -40,6 +39,11 @@ function userLogin(){
         },
         success:function(data){
             console.log(data);
+            if(data == 1){
+                window.location.href = "./page1.php";
+            }else{
+                alert("something wrong");
+            }
         }
     });
 }

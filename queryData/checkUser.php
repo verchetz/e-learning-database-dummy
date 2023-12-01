@@ -14,6 +14,14 @@ if (isset($_POST['cekemail']) && isset($_POST['email'])) {
 if (isset($_POST['username']) && isset($_POST['email'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    //$sql = "SELECT username, email FROM users WHERE username = '".$username."', "
+    $sql = "SELECT username, email FROM users WHERE username = '".$username."' AND email = '".$email."'";
+    $result = $conn->query($sql);
+    $row = $result->num_rows;
+    echo json_encode($row);
+    // if ($row === 1) {
+    //     echo json_encode($row);
+    // }elseif($row === 0){
+    //     echo json_encode($row);
+    // }
 }
 ?>
