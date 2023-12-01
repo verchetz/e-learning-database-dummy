@@ -3,13 +3,13 @@
 include_once('../dbConnection.php');
 
 //check email registered or not
-if (isset($_POST['email'])) {
-    $email = $_POST['email'];
-    $sql = "SELECT email FROM users WHERE email = '.$email.'";
-    $result = $conn->query($sql);
-    $row = $result->num_rows;
-    echo json_encode($row);
-}
+// if (isset($_POST['email'])) {
+//     $email = $_POST['email'];
+//     $sql = "SELECT email FROM users WHERE email = '.$email.'";
+//     $result = $conn->query($sql);
+//     $row = $result->num_rows;
+//     echo json_encode($row);
+// }
 
 
 //insert
