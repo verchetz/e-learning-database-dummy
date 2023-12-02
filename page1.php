@@ -3,7 +3,8 @@
 
     <div class="container mt-5">
         <!-- title -->
-        <h1>Hello world</h1>
+        
+        <h1>Hello <?= $_SESSION['username'];?></h1>
         
         <hr>
 

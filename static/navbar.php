@@ -18,7 +18,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
-        <?php if (isset($_SESSION['isLogin'])) {
+        <?php session_start();
+              if (!isset($_SESSION['isLogin'])) {
                 echo '<a class="nav-link active" href="./login.php">Login</a>';
               }else{
                 echo '<a class="nav-link active" href="logout.php" name="logout" type="submit">Logout</a>';

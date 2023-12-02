@@ -47,8 +47,9 @@ function userLogin() {
         setTimeout(() => {
           window.location.href = "./page1.php";
         }, 900);
-      } else {
+      } else if(data  ==  0) {
         $(".statusLogin").html("<span class='text-danger'>Wrong</span>");
+        console.log("something  wrong");
       }
     },
   });

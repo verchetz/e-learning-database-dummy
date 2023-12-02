@@ -14,7 +14,7 @@ if (isset($_POST['cekemail']) && isset($_POST['email'])) {
 }
 
 //login page
-if(!isset($_SESSION['isLogin'])){
+// if(!isset($_SESSION['isLogin'])){
     if (isset($_POST['username']) && isset($_POST['email'])) {
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -24,10 +24,10 @@ if(!isset($_SESSION['isLogin'])){
         if ($row === 1) {
             $_SESSION['isLogin'] = true;
             $_SESSION['username'] = $username;
+            echo json_encode($row);
         }elseif($row === 0){
-            $_SESSION['isLogin'] = false;
+            echo json_encode($row);
         }
-        echo json_encode($row);
     }
-}
+// }
 ?>
