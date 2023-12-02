@@ -1,3 +1,10 @@
+<?php  
+session_start();
+if (empty($_SESSION['username'])) {
+  $_SESSION['username'] = 'user';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +25,12 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
-        <?php session_start();
-              if (!isset($_SESSION['isLogin'])) {
+        <?php if (!isset($_SESSION['isLogin'])) {
                 echo '<a class="nav-link active" href="./login.php">Login</a>';
               }else{
                 echo '<a class="nav-link active" href="logout.php" name="logout" type="submit">Logout</a>';
               } ?>
+        <a class="nav-link active" aria-current="page" href="./register.php">Register</a>
       </div>
     </div>
   </div>

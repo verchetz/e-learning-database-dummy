@@ -27,30 +27,30 @@ $(document).ready(function () {
   });
 });
 
-//login
-function userLogin() {
-  event.preventDefault();
-  let username = $("#username").val();
-  let email = $("#email").val();
-
-  $.ajax({
-    url: "queryData/checkUser.php",
-    method: "POST",
-    data: {
-      username: username,
-      email: email,
-    },
-    success: function (data) {
-      console.log(data);
-      if (data == 1) {
-        $(".statusLogin").html("<span class='spinner-border text-success'></span>");
-        setTimeout(() => {
-          window.location.href = "./page1.php";
-        }, 900);
-      } else if(data  ==  0) {
-        $(".statusLogin").html("<span class='text-danger'>Wrong</span>");
-        console.log("something  wrong");
+      //login
+      function userLogin() {
+        event.preventDefault();
+        let username = $("#username").val();
+        let email = $("#email").val();
+  
+        $.ajax({
+          url: "queryData/checkUser.php",
+          method: "POST",
+          data: {
+            username: username,
+            email: email,
+          },
+          success: function (data) {
+            console.log(data);
+            if (data == 1) {
+              $("#statusUserLogin").html("<span class='spinner-border text-success'></span>");
+              setTimeout(() => {
+                window.location.href = "./page1.php";
+              }, 900);
+            } else if(data  ==  0) {
+              $("#statusUserLogin").html("<span class='text-danger'>Wrong</span>");
+              console.log("something  wrong");
+            }
+          },
+        });
       }
-    },
-  });
-}

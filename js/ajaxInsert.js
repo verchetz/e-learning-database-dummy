@@ -7,19 +7,19 @@ function add() {
     let email = $(".email").val();
 
   if (!regex.test(email) && email.trim() != "") {
-    $(".validEmail").html("<span class='text-danger'>Invalid email</span>");
+    $(".validEmail").html("<span class='text-danger'> Invalid email</span>");
     $(".email").focus();
     return false;
   } else if (names.trim() == "") {
-    $(".validName").html("<span class='text-danger'>Please put name</span>");
+    $(".validName").html("<span class='text-danger'> Please put name</span>");
     $(".names").focus();
     return false;
   } else if (username.trim() == "") {
-    $(".validUsername").html("<span class='text-danger'>Please put usernamename</span>");
+    $(".validUsername").html("<span class='text-danger'> Please put usernamename</span>");
     $(".username").focus();
     return false;
   } else if (email.trim() == "") {
-    $(".validEmail").html("<span class='text-danger'>Please put email</span>");
+    $(".validEmail").html("<span class='text-danger'> Please put email</span>");
     $(".email").focus();
     return false;
   } else {
@@ -35,11 +35,14 @@ function add() {
       success: function (data) {
         console.log(data);
         if (data == "yes") {
-          $("#successRegis").html("<span>Registration success</span>");
           $(".names").val("");
           $(".username").val("");
           $(".email").val("");
-        } else if (data != "no") {
+          $("#successRegis").html("<span class='spinner-border text-success'></span>");
+          setTimeout(() => {
+            window.location.href = "./page1.php";
+          }, 900);
+        } else if (data == "no") {
             $("#successRegis").html("<span>Registration failed</span>");
         }
       },
