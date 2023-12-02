@@ -23,7 +23,7 @@ if(!isset($_SESSION['isLogin'])){
         $row = $result->num_rows;
         if ($row === 1) {
             $_SESSION['isLogin'] = true;
-            $_SESSION['email'] = $email;
+            $_SESSION['username'] = $username;
         }elseif($row === 0){
             $_SESSION['isLogin'] = false;
         }

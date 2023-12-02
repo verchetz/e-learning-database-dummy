@@ -3,12 +3,7 @@
 
     <div class="container mt-5">
         <!-- title -->
-        <?php if(isset($_SESSION['isLogin'])){
-                echo '<h1>Hello user</h1>';
-              }else{
-                $username = 'kamu';
-                echo "<h1>Hello $username</h1>";
-              } ?>
+        <h1>Hello world</h1>
         
         <hr>
 

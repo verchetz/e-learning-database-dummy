@@ -21,7 +21,7 @@
         <?php if (isset($_SESSION['isLogin'])) {
                 echo '<a class="nav-link active" href="./login.php">Login</a>';
               }else{
-                echo '<a class="nav-link active" href="#">Logout</a>';
+                echo '<a class="nav-link active" href="logout.php" name="logout" type="submit">Logout</a>';
               } ?>
       </div>
     </div>
